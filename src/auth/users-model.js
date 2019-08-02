@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+require('./roles-model.js');
 
 const users = new mongoose.Schema({
   username: {type:String, required:true, unique:true},
@@ -25,6 +26,7 @@ const capabilities = {
 };
 
 users.methods.can = function(capability) {
+  console.log(this);
   return capabilities[this.role].includes(capability)
 };
 
@@ -91,7 +93,7 @@ users.methods.generateToken = function() {
     role: this.role,
   };
 
-  return jwt.sign(token, process.env.SECRET, {expiresIn: '15s'});
+  return jwt.sign(token, process.env.SECRET, {expiresIn: '3000s'});
 };
 
 module.exports = mongoose.model('users', users);
