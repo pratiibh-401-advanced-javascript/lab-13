@@ -19,15 +19,16 @@ users.virtual('acl', {
   justOne: true,
 });
 
-const capabilities = {
-  admin: ['create', 'read', 'update', 'delete'],
-  editor: ['create', 'read', 'update'],
-  user: ['read'],
-};
+// const capabilities = {
+//   admin: ['create', 'read', 'update', 'delete'],
+//   editor: ['create', 'read', 'update'],
+//   user: ['read'],
+// };
 
 users.methods.can = function(capability) {
   console.log(this);
-  return capabilities[this.role].includes(capability)
+  // return capabilities[this.role].includes(capability)
+  return this.acl.capabilities.includes(capability);
 };
 
 users.pre('findOne', function() {
@@ -91,6 +92,7 @@ users.methods.generateToken = function() {
   let token = {
     id: this._id,
     role: this.role,
+    // capabilities: this.acl.capabilities
   };
 
   return jwt.sign(token, process.env.SECRET, {expiresIn: '3000s'});
