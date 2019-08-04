@@ -5,7 +5,7 @@
 ### Author: Pratiibh Bassi
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
+* [submission PR](https://github.com/pratiibh-401-advanced-javascript/lab-13/pull/1)
 * [travis](https://www.travis-ci.com/pratiibh-401-advanced-javascript/lab-13)
 
 
