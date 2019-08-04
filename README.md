@@ -6,12 +6,12 @@
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
+* [travis](https://www.travis-ci.com/pratiibh-401-advanced-javascript/lab-13)
 
 
 #### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
+* [api docs](http://xyz.com) 
+* [jsdoc](http://xyz.com) 
 
 ### Modules#### 
 #### `index.js` starts app by running `node index.js`
